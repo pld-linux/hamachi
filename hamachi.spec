@@ -19,7 +19,8 @@ Source0:	http://files.hamachi.cc/linux/%{name}-%{ver}-%{subver}.tar.gz
 # NoSource0-md5:	d33566156304f0635659be7d1c48b41a
 NoSource:	0
 URL:		http://www.hamachi.cc
-BuildRequires:	sed >= 4
+BuildRequires:	rpmbuild(macros) >= 1.230
+BuildRequires:	sed >= 4.0
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
