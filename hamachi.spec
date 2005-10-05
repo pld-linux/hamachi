@@ -7,8 +7,8 @@
 
 %define		_noautostrip	.*hamachi
 
-Summary:	hamachi
-#Summary(pl):	-
+Summary:	hamachi - simple VPN
+Summary(pl):	hamachi - prosty VPN
 Name:		hamachi
 Version:	%{ver}_%{subver}
 Release:	0.1
@@ -18,7 +18,7 @@ Group:		Networking
 Source0:	http://files.hamachi.cc/linux/%{name}-%{ver}-%{subver}.tar.gz
 # NoSource0-md5:	d33566156304f0635659be7d1c48b41a
 NoSource:	0
-URL:		http://www.hamachi.cc
+URL:		http://www.hamachi.cc/
 BuildRequires:	rpmbuild(macros) >= 1.230
 BuildRequires:	sed >= 4.0
 ExclusiveArch:	%{ix86}
@@ -29,7 +29,11 @@ With Hamachi you can organize two or more computers with an Internet
 connection into their own virtual network for direct secure
 communication. See README for futher information.
 
-#description -l pl
+%description -l pl
+Przy u¿yciu Hamachi mo¿na po³±czyæ dwa lub wiêcej komputerów z ³±czem
+do Internetu we w³asn± wirtualn± sieæ w celu bezpo¶redniej,
+bezpiecznej komunikacji. Wiêcej informacji znajduje siê w pliku
+README.
 
 %prep
 %setup -q -n %{name}-%{ver}-%{subver}
@@ -66,11 +70,8 @@ fi
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) /sbin/*
 
-
 # initscript and its config
 %if %{with initscript}
 %attr(754,root,root) /etc/rc.d/init.d/%{name}
 %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
 %endif
-
-#%{_examplesdir}/%{name}-%{version}
