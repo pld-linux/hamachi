@@ -3,7 +3,7 @@
 #   initscripts ?
 #
 %define		ver 0.9.9.9
-%define		subver 7
+%define		subver 14
 
 %define		_noautostrip	.*hamachi
 
@@ -15,8 +15,8 @@ Release:	0.1
 Epoch:		0
 License:	free, not-distributable
 Group:		Networking
-Source0:	http://files.hamachi.cc/linux/%{name}-%{ver}-%{subver}.tar.gz
-# Source0-md5:	c782f0c24045b6a45f490c4bc34a92f8
+Source0:	http://files.hamachi.cc/linux/%{name}-%{ver}-%{subver}-lnx.tar.gz
+# Source0-md5:	32765b42528065ee0e87f9ee75d3de9f
 URL:		http://www.hamachi.cc/
 BuildRequires:	rpmbuild(macros) >= 1.230
 BuildRequires:	sed >= 4.0
@@ -35,7 +35,7 @@ bezpiecznej komunikacji. Wiêcej informacji znajduje siê w pliku
 README.
 
 %prep
-%setup -q -n %{name}-%{ver}-%{subver}
+%setup -q -n %{name}-%{ver}-%{subver}-lnx
 
 %build
 sed -i 's, [^/ ]*/hamachi , hamachi ,' Makefile
