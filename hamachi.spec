@@ -3,7 +3,7 @@
 #   initscripts ?
 #
 %define		ver 0.9.9.9
-%define		subver 14
+%define		subver 17
 
 %define		_noautostrip	.*hamachi
 
@@ -16,7 +16,7 @@ Epoch:		0
 License:	free, not-distributable
 Group:		Networking
 Source0:	http://files.hamachi.cc/linux/%{name}-%{ver}-%{subver}-lnx.tar.gz
-# Source0-md5:	32765b42528065ee0e87f9ee75d3de9f
+# Source0-md5:	1638f2bf7f812e75fee51c66d1623942
 URL:		http://www.hamachi.cc/
 BuildRequires:	rpmbuild(macros) >= 1.230
 BuildRequires:	sed >= 4.0
