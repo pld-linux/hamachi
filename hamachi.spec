@@ -1,12 +1,8 @@
-#
 # TODO:
-#   initscripts ?
+# - initscripts ?
 #
 %define		ver 0.9.9.9
 %define		subver 17
-
-%define		_noautostrip	.*hamachi
-
 Summary:	hamachi - simple VPN
 Summary(pl):	hamachi - prosty VPN
 Name:		hamachi
@@ -23,6 +19,9 @@ BuildRequires:	sed >= 4.0
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_sbindir	/sbin
+%define		_noautostrip	.*hamachi
+
 %description
 With Hamachi you can organize two or more computers with an Internet
 connection into their own virtual network for direct secure
@@ -37,40 +36,21 @@ README.
 %prep
 %setup -q -n %{name}-%{ver}-%{subver}-lnx
 
-%build
 sed -i 's, [^/ ]*/hamachi , hamachi ,' Makefile
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},/sbin}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir}}
 
 %{__make} install \
 	HAMACHI_DST=$RPM_BUILD_ROOT%{_bindir} \
-	TUNCFG_DST=$RPM_BUILD_ROOT/sbin
+	TUNCFG_DST=$RPM_BUILD_ROOT%{_sbindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%if %{with initscript}
-%post init
-/sbin/chkconfig --add %{name}
-%service %{name} restart
-
-%preun init
-if [ "$1" = "0" ]; then
-	%service -q %{name} stop
-	/sbin/chkconfig --del %{name}
-fi
-%endif
 
 %files
 %defattr(644,root,root,755)
 %doc README LICENSE*
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) /sbin/*
-
-# initscript and its config
-%if %{with initscript}
-%attr(754,root,root) /etc/rc.d/init.d/%{name}
-%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
-%endif
+%attr(755,root,root) %{_sbindir}/*
