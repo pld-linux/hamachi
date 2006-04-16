@@ -14,7 +14,6 @@ Group:		Networking
 Source0:	http://files.hamachi.cc/linux/%{name}-%{ver}-%{subver}-lnx.tar.gz
 # Source0-md5:	1638f2bf7f812e75fee51c66d1623942
 URL:		http://www.hamachi.cc/
-BuildRequires:	rpmbuild(macros) >= 1.230
 BuildRequires:	sed >= 4.0
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
