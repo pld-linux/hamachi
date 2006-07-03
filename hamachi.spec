@@ -2,7 +2,7 @@
 # - initscripts ?
 #
 %define		ver 0.9.9.9
-%define		subver 17
+%define		subver 20
 Summary:	hamachi - simple VPN
 Summary(pl):	hamachi - prosty VPN
 Name:		hamachi
@@ -12,7 +12,7 @@ Epoch:		0
 License:	free, not-distributable
 Group:		Networking
 Source0:	http://files.hamachi.cc/linux/%{name}-%{ver}-%{subver}-lnx.tar.gz
-# Source0-md5:	1638f2bf7f812e75fee51c66d1623942
+# Source0-md5:	27e4c926d0aa03de3573c0b7acf032a6
 URL:		http://www.hamachi.cc/
 BuildRequires:	sed >= 4.0
 ExclusiveArch:	%{ix86}
