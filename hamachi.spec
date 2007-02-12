@@ -4,8 +4,8 @@
 %define		ver 0.9.9.9
 %define		subver 20
 Summary:	hamachi - simple VPN
-Summary(de):	hamachi - eine einfache VPN
-Summary(pl):	hamachi - prosty VPN
+Summary(de.UTF-8):   hamachi - eine einfache VPN
+Summary(pl.UTF-8):   hamachi - prosty VPN
 Name:		hamachi
 Version:	%{ver}_%{subver}
 Release:	0.1
@@ -27,15 +27,15 @@ With Hamachi you can organize two or more computers with an Internet
 connection into their own virtual network for direct secure
 communication. See README for futher information.
 
-%description -l de
+%description -l de.UTF-8
 Mit Hamachi kann man zwei oder mehr Rechner mit Internetzugang in ein
 eigenes virtueles Netzwerk verbinden um direkt und sicher zu
 kommunizieren. Mehr Infos findet man in der README.
 
-%description -l pl
-Przy u¿yciu Hamachi mo¿na po³±czyæ dwa lub wiêcej komputerów z ³±czem
-do Internetu we w³asn± wirtualn± sieæ w celu bezpo¶redniej,
-bezpiecznej komunikacji. Wiêcej informacji znajduje siê w pliku
+%description -l pl.UTF-8
+Przy uÅ¼yciu Hamachi moÅ¼na poÅ‚Ä…czyÄ‡ dwa lub wiÄ™cej komputerÃ³w z Å‚Ä…czem
+do Internetu we wÅ‚asnÄ… wirtualnÄ… sieÄ‡ w celu bezpoÅ›redniej,
+bezpiecznej komunikacji. WiÄ™cej informacji znajduje siÄ™ w pliku
 README.
 
 %prep
