@@ -4,8 +4,8 @@
 %define		ver 0.9.9.9
 %define		subver 20
 Summary:	hamachi - simple VPN
-Summary(de.UTF-8):   hamachi - eine einfache VPN
-Summary(pl.UTF-8):   hamachi - prosty VPN
+Summary(de.UTF-8):	hamachi - eine einfache VPN
+Summary(pl.UTF-8):	hamachi - prosty VPN
 Name:		hamachi
 Version:	%{ver}_%{subver}
 Release:	0.1
